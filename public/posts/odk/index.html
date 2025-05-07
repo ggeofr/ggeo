@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ODK | Blog de géomatique</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Accueil</a></li>
+      
+      <li><a href="/about/">A propos</a></li>
+      
+      <li><a href="/categories/">Catégories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">ODK</span></h1>
+
+<h2 class="date">04/05/2025</h2>
+</div>
+
+<main>
+<h2 id="introduction-à-odk">Introduction à ODK</h2>
+<p>Open Data Kit (ODK) permet de créer des formulaires pour collecter de la donnée depuis le terrain.</p>
+<p>Ce kit est composé:</p>
+<ul>
+<li>d&rsquo;un standard XLSForm pour réaliser des formulaires avec un tableur comme LibreOffice, Excel ou Google Spreadsheet,</li>
+<li>de l&rsquo;application mobile ODK Collect pour collecter les données sur le terrain à partir du formulaire créé,</li>
+<li>et d&rsquo;un serveur pour agréger les soumissions de formulaires comme ODK Central ou KoboToolBox.</li>
+</ul>
+<p>Les avantages sont la facilité de mise en œuvre et d&rsquo;adapatation à une problématique. Il n&rsquo;y a pas de base de données à installer et tout le paramétrage du formulaire se fait à l&rsquo;aide d&rsquo;un tableur. Le serveur ne sert qu&rsquo;à agréger et télécharger les données. Rien ne reste sur le serveur une fois l&rsquo;enquête terminée.</p>
+<p>Autre avantage: la saisie sur le terrain en mode déconnecté lorsque la couverture réseau est incertaine. De plus, comme il n&rsquo;y a pas de grosse base de données, le serveur n&rsquo;a pas besoin d&rsquo;être un monstre. Les données collectées avec une composante spatiale (réponses à la question &ldquo;où?&rdquo;) peuvent servir à alimenter un Système d&rsquo;Information Géographique (SIG).</p>
+<p>Pour toute information complémentaire, vous pouvez consulter le site <a href="https://getodk.org/">getodk</a>, la <a href="https://docs.getodk.org/">documentation</a> ou le dépot de code <a href="https://github.com/getodk">github</a></p>
+<h2 id="auto-héberger-le-serveur-odk-central">Auto-héberger le serveur ODK Central</h2>
+<p>Vous pouvez choisir d&rsquo;auto-héberger le serveur ODK Central pour avoir la main sur tout le workflow. Pour ceux qui ne veulent pas s&rsquo;embêter, vous pouvez utiliser un serveur hébergé par un fournisseur de service, payant ou pas, mais là n&rsquo;est pas l&rsquo;objet de mon post. Enfin, à la fin du post je détaille l&rsquo;utilisation de KoboToolBox quand même.</p>
+<h3 id="installer-odk-central-sur-un-serveur">Installer ODK Central sur un serveur</h3>
+<p>Ce n&rsquo;est pas bien compliqué un fois qu&rsquo;on a son domaine et son serveur VPS. J&rsquo;ai suivi ce <a href="https://docs.getodk.org/central-install/#installing-elsewhere">tuto</a> et notamment cette <a href="https://docs.getodk.org/central-install-digital-ocean/">section</a> pour une installation avec Docker sur un VPS OVH.</p>
+<h3 id="louer-un-vps">Louer un VPS</h3>
+<p>J&rsquo;ai pris un VPS de base avec 2Go de RAM chez OVH. Les option de snapshot et de backup automatique font grimper la facture. A voir car les données soumises sont téléchargées au fur et à mesure. Le snapshot reste intéressant pour une sauvegarde de l&rsquo;installation à un instant T. Il est possible de s&rsquo;en sortir pour 10 à 12€ TTC /mois avec snapshot et backup automatique, et pour 5€ sans les sauvegardes mais c&rsquo;est sans filet.</p>
+<p>J&rsquo;ai choisi un serveur avec OS (debian 12) et Docker préinstallé mais vous pouvez choisir un serveur Debian nu et faire votre installation de Docker à la mano. Un fois fait, vous recevrez un lien par mail pour définir un mot de passe pour le compte root. La connexion au serveur se fera par SSH. Pour un minimum de sécurité, pensez à changer le port par défaut du SSH, voire mettre en place un fail2ban. Cette <a href="https://help.ovhcloud.com/csm/fr-vps-security-tips?id=kb_article_view&amp;sysparm_article=KB0047708">doc OVH</a> peut vous aider. Pas besoin d&rsquo;être parano car le serveur debian est une &ldquo;coquille vide&rdquo;, tout se passe dans les containers Docker.</p>
+<p>Vous aurez accès à tous les paramètres dans le manager OVH dans la section Bare Metal Cloud correspondant aux VPS.
+Pour l&rsquo;exemple, l&rsquo;IP du serveur sera <code>137.24.255.255</code>.</p>
+<h3 id="configurer-son-domaine">Configurer son domaine</h3>
+<h4 id="prendre-un-domaine-chez-un-registrar">Prendre un domaine chez un Registrar</h4>
+<p>Vous avez besoin de prendre un nom de domaine chez un Registrar. Il y en a pour tous les gouts faites vous plaisir. Attention le coût peut varier en fonction de l&rsquo;extension de premier niveau et de la promo la première année. Un .fr coute environ 7-8€ /an. Cela va permettre de faire pointer un sous domaine vers votre serveur VPS. Dans l&rsquo;exemple le domaine sera <code>toto.fr</code>.</p>
+<h4 id="configurer-un-sous-domaine">Configurer un sous-domaine</h4>
+<p>Pourquoi configurer un sous-domaine et pas le domaine entier? Parce que votre domaine <code>toto.fr</code> peut servir à plein d&rsquo;autres choses. Il suffit de créer un sous domaine <code>odkcentral</code>et  de l&rsquo;affecter à votre VPS sur lequel sera installé ODK Central.</p>
+<p>Pour cela, dans votre manager OVH, allez dans l&rsquo;onglet Web Cloud, puis sur votre domaine et dans la section Zone DNS.</p>
+<p>Cliquez sur le bouton &ldquo;Ajouter un entrée&rdquo;, choisissez un type de champ DNS &ldquo;A&rdquo;, remplissez votre sous domaine comme <code>odkcentral</code>, laissez la TTL par défaut, et définissez la cible vers l&rsquo;adresse IP de votre serveur VPS <code>137.24.255.255</code> et validez.</p>
+<p>Lorsque quelqu&rsquo;un remplira l&rsquo;url <code>https://odkcentral.toto.fr</code> dans son navigateur, il sera redirigé sur le VPS hébergeant ODK Central.</p>
+<h3 id="installer-odk-central">Installer ODK Central</h3>
+<h4 id="installation-avec-docker">Installation avec Docker</h4>
+<p>Avec un terminal, connecté en SSH au VPS avec un compte ayant des droits root lancer les commandes indiquées.<br>
+Adapté d&rsquo;après ce <a href="https://docs.getodk.org/central-install-digital-ocean/">tuto</a>.</p>
+<p>S&rsquo;assurer d&rsquo;avoir les bonnes versions de Docker Engine &gt; v23x et de Docker Compose &gt; v2.16.x</p>
+<pre><code class="language-bash">$ docker --version &amp;&amp; docker compose version
+</code></pre>
+<p>Télécharger le logiciel à partir de github</p>
+<pre><code class="language-bash">$ git clone https://github.com/getodk/central
+</code></pre>
+<p>Aller dans le nouveau dossier central</p>
+<pre><code class="language-bash">$ cd central
+</code></pre>
+<p>Obtenir la dernière version du client et du serveur avec git</p>
+<pre><code class="language-bash">$ git submodule update -i
+</code></pre>
+<p>Mettre à jour les paramètres en copiant le modèle de fichier des paramètres pour les éditer</p>
+<pre><code class="language-bash">$ cp .env.template .env
+</code></pre>
+<p>Editer le fichier <code>.env</code> avec l&rsquo;éditeur de texte nano</p>
+<pre><code class="language-bash">$ nano .env
+</code></pre>
+<p>Naviger avec les flèches directionnelles à l&rsquo;intérieur de nano<br>
+Changer la ligne <code>DOMAIN=MyOdkCentralServer.com</code> pour <code>DOMAIN=odkcentral.toto.fr</code><br>
+Changer la ligne <code>SYSADMIN_EMAIL=administrator@email.com</code> pour <code>SYSADMIN_EMAIL=votre@email.com</code>. Cette adresse mail est utilisée par le service de certicats let&rsquo;s encrypt
+Enregistrer avec les touches <code>CTRL</code> + <code>x</code> et <code>Entrée</code></p>
+<p>On veut la denière version de la base de donnée postgres (comme quoi il y a quand même une base de données)</p>
+<pre><code class="language-bash">$ touch ./files/allow-postgres14-upgrade
+</code></pre>
+<p>Lancer la construction des containers avec Docker compose</p>
+<pre><code class="language-bash">$ docker compose build
+</code></pre>
+<p>Attendre. Surveillez le &ldquo;Successfully built&rdquo;. Super, ODK Central est installé.</p>
+<p>Démarrer le serveur Central</p>
+<pre><code class="language-bash">$ docker compose up -d
+</code></pre>
+<p>Regardez si ODK a fini de charger</p>
+<pre><code class="language-bash">$ docker compose ps
+</code></pre>
+<p>Sous la colonne <code>status</code> attendre que <code>central-nginx-1</code> soit <code>Up</code> ou <code>Up (healthy)</code></p>
+<p>Vérifier que le site répond en allant sur <code>https://odkcentral.toto.fr</code></p>
+<h4 id="créez-un-compte-administrateur-de-odk-central">Créez un compte administrateur de ODK Central</h4>
+<p>Aller dans le dossier central sur le VPS</p>
+<pre><code class="language-bash">$ cd central
+</code></pre>
+<p>Créer un nouveau compte avec une adresse email</p>
+<pre><code class="language-bash">$ docker compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-create
+</code></pre>
+<p>Rentrer un mot de passe</p>
+<p>Rendre ce compte administrateur</p>
+<pre><code class="language-bash">$ docker compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-promote
+</code></pre>
+<p>Si vous perdez votre mot de passe réinitialisez le</p>
+<pre><code class="language-bash">$ docker compose exec service odk-cmd --email YOUREMAIL@ADDRESSHERE.com user-set-password
+</code></pre>
+<p>Retournez sur le site <code>https://odkcentral.toto.fr</code> et connectez vous avec le compte administrateur créé.</p>
+<h2 id="modéliser-son-formulaire-xlsform">Modéliser son formulaire XLSForm</h2>
+<p>Le modèle fourni par ODK Central lors de la création du premier formulaire comprends 3 feuilles qu&rsquo;il faut remplir.</p>
+<ol>
+<li>Survey: le formulaire à proprement parler</li>
+<li>Choices: les listes de choix et leurs valeurs servant au formulaire</li>
+<li>Settings: les paramètres généraux comme le nom du formulaire et les champs servant à identifier chaque soumission (ex: concaténation d&rsquo;un champ date et d&rsquo;un champ nom d&rsquo;observateur).</li>
+</ol>
+<p>Les autres feuilles indicatives contiennent des informations commes la bibliothèque des différents types de données possibles.</p>
+<p>Consultez <a href="https://docs.getodk.org/">la doc</a> ou <a href="https://forum.getodk.org/">le forum</a> d&rsquo;ODK Central pour cela.</p>
+<p>Une fois modélisé, uploadez le fichier Excel pour créer une ébauche de formulaire et testez-le.</p>
+<p>Une fois testé, vous pouvez le publier et définir les droits d&rsquo;accès au formulaire:</p>
+<ul>
+<li>ouvert à tous,</li>
+<li>aux seuls détenteurs du lien,</li>
+<li>aux utilisateurs définis,</li>
+<li>aux collecteurs à partir d&rsquo;application mobile)</li>
+</ul>
+<h2 id="installer-le-client-mobile-android-odk-collect">Installer le client mobile Android ODK Collect</h2>
+<p>L&rsquo;application mobile ODK Collect permet de saisir les formulaires créés. Elle est disponibles sur les stores</p>
+<p>Android: <a href="https://play.google.com/store/apps/details?id=org.odk.collect.android&amp;pcampaignid=web_share">ODK Collect</a></p>
+<p>Apple: pas de version Apple d&rsquo;ODK Collect mais <a href="https://forum.getodk.org/t/ios-version-of-odk-collect/10151">d&rsquo;autres applications compatibles</a> non testées.</p>
+<p>Le paramétrage du formulaire se fait automatiquement avec le QR Code généré dans le serveur ODK Central et fournit par l&rsquo;administrateur au collecteur des données. De même, les droits sont définis par l&rsquo;administrateur dans ODK Central. On peut aussi saisir l&rsquo;url du serveur, l&rsquo;identifiant et le mot de passe.</p>
+<p>Pour plus de détails sur l&rsquo;utilisation d&rsquo;ODK Collect vous pouvez consulter ce <a href="https://ariegenature.fr/wp-content/uploads/2022/07/Guide-premiere-utilisation-ODK.pdf">guide</a> du CEN de l&rsquo;Ariège qui est très bien fait.</p>
+<h2 id="utiliser-le-formulaire-web-enketo">Utiliser le formulaire web Enketo</h2>
+<p>ODK Central permet de saisir directement le formulaire web avec Enketo.</p>
+<h2 id="télécharger-les-soumissions-de-formulaires-avec-odk-central">Télécharger les soumissions de formulaires avec ODK Central</h2>
+<p>Dans ODK Central, vous pouvez valider les soumissions, les agréger et les télécharger au format CSV. Le traitement des informations géolocalisées peut poser problème. En effet les champs <code>geopoint</code>, <code>geotrace</code> et <code>geoshape</code> contiennent les coordonnées des points qui composent les points, lignes et polygones mais ne sont pas dans un format facilement utilisable avec les SIG pour une visualisation cartographique.</p>
+<h2 id="résoudre-les-problèmes-denvoi-de-mails">Résoudre les problèmes d&rsquo;envoi de mails</h2>
+<p>ODK Central envoi des mails lors de la création des comptes utilisateurs web pour la saisie avec Enketo. Des mails sont aussi générés lorsque les utilisateurs réinitialisent leurs mots de passe. L&rsquo;envoi de mails par le serveur ODK Central peut être difficile s&rsquo;il est configuré sur un sous-domaine mal authentifié (politiques DKIM et DMARC). Dans mon exemple les mails proviennent de <a href="mailto:no-reply@odkcentral.toto.fr">no-reply@odkcentral.toto.fr</a> ce qui devient compliqué si @toto.fr est déjà paramétré comme serveur mail avec une politique stricte en matière de délivrabilité mail. Il faut donc penser à bien authentifier aussi le sous domaine pour l&rsquo;envoi mail.</p>
+<p>Mais le plus simple est d&rsquo;utiliser un serveur SMTP alternatif dédié.</p>
+<p>Dans le terminal aller dans le dossier <code>central</code> et éditer le ficher <code>.env</code> avec le serveur hôte, le port et les détails d&rsquo;authentification.</p>
+<pre><code class="language-bash">$ cd central
+$ nano .env
+</code></pre>
+<p>Décommenter et remplir les lignes suivantes:</p>
+<pre><code class="language-bash">EMAIL_FROM=my-no-reply-email-address
+EMAIL_HOST=my-email-host
+EMAIL_PORT=my-email-port
+EMAIL_IGNORE_TLS=true-or-false
+EMAIL_SECURE=true-or-false
+EMAIL_USER=my-email-user
+EMAIL_PASSWORD=my-email-password
+</code></pre>
+<ul>
+<li>EMAIL_FROM l&rsquo;adresse mail de l&rsquo;expéditeur (sender address) pour les réponses.</li>
+<li>EMAIL_HOST le serveur de mail hôte pour le SMTP.</li>
+<li>EMAIL_IGNORE_TLS réglé sur <code>false</code>.</li>
+<li>EMAIL_SECURE réglé sur <code>true</code> si vous utilisez le port 465 et sur <code>false</code> pour les autres ports.</li>
+<li>EMAIL_USER et EMAIL_PASSWORD sont tous deux requis.</li>
+</ul>
+<p>Lancer le build et redémarrer le container:</p>
+<pre><code class="language-bash">$ docker compose build service &amp;&amp; docker compose stop service &amp;&amp; docker compose up -d service
+</code></pre>
+<h2 id="utiliser-les-données-dans-un-sig-avec-qgis">Utiliser les données dans un SIG avec QGis</h2>
+<p>Pour visualiser et télécharger les soumissions des formulaires vous pouvez aussi utiliser le logiciel libre QGis.</p>
+<p>Des plugins ou extensions permettent de télécharger depuis ODK Central et de traiter les données géolocalisées (geopoint, geotrace, geoshape) pour les afficher dans QGis. J&rsquo;en ai testé 2.</p>
+<h3 id="odktracetowkt">ODKTraceToWKT</h3>
+<p><a href="https://plugins.qgis.org/plugins/odktrace2wkt/">ODKTraceToWKT</a></p>
+<p>Après téléchargement des soumissions ODK Central en CSV, permet de convertir des geotraces en tableur CSV avec colonne géographique en WKT pour visualiser sur QGis.</p>
+<h3 id="quodk">QuODK</h3>
+<p><a href="https://forum.getodk.org/t/quodk-another-connector-between-odk-central-and-qgis-to-get-your-data-more-easily/51526/6">QuODK</a></p>
+<p>Permet la connexion directe au serveur ODK Central. Paramétrer le plugin en spécifiant l&rsquo;url du serveur ODK Central (ne pas mettre le /final à la fin de l&rsquo;url du serveur ODK), l&rsquo;identifiant de l&rsquo;utilisateur et le mot de passe. Ensuite spécifier le projet, le formulaire et le type de geolocalisation à afficher.</p>
+<h3 id="qrealtime">QRealTime</h3>
+<p>Permet la synchronisation directe d&rsquo;une couche SIG QGis au serveur ODK Central ou à KoboToolBox.</p>
+<h2 id="kobotoolbox">KoboToolBox</h2>
+<p>La plateforme commerciale <a href="https://www.kobotoolbox.org/">KoboToolbox</a> regroupe un agrégateur compatible ODK et les outils de gestion, visualisation, de traitement et d&rsquo;export des soumissions. Les mêmes formulaires Excel peuvent être utilisés comme modèles. La version gratuite permet de traiter jusqu&rsquo;à 5000 soumissions par mois. Ce peut être une alternative à ODK Central pour ceux qui ne veulent pas faire d&rsquo;auto-hébergement.</p>
+<h2 id="ressources-tutoriels-vidéos">Ressources, tutoriels, vidéos</h2>
+<p>Vidéos:</p>
+<ul>
+<li>Cette <a href="https://youtu.be/8rS2fM7LO8s?si=7dilLfGLGY_VMioz">vidéo</a> montre bien l&rsquo;installation d&rsquo;ODK Central et la configuration du sous-domaine sur un serveur Linux.</li>
+<li><a href="https://youtu.be/22l0xHxJ3vo?si=YeU9z7S9RTqhttsV">Celle-ci</a> vous guide pour réaliser votre premier formulaire.</li>
+<li><a href="https://youtu.be/4gs50sF_qJc?si=8BlAcHBclT_4rm5C">Celle-là</a> vous explique comment utiliser KoboToolBox pour télécharger les données.</li>
+</ul>
+<p>Articles:</p>
+<ul>
+<li><a href="https://geotribu.fr/articles/2021/2021-06-08_odk_postgis_1/">Geotribu</a></li>
+</ul>
+<p>Forum:</p>
+<ul>
+<li><a href="https://forum.getodk.org/">getODK</a></li>
+</ul>
+<p>Docs:</p>
+<ul>
+<li><a href="https://docs.getodk.org/">getODK</a></li>
+</ul>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  © <a href="https://ggeo.fr">ggeo</a> &ndash; 2025 | <a href="https://github.com/ggeofr">Github</a> | <a href="https://bsky.app/profile/ggeo.fr">Bluesky</a>
+  
+  </footer>
+  </body>
+</html>
+

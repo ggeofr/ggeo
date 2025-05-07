@@ -1,0 +1,52 @@
+baseurl: "https://ggeo.fr/"  # please update this to your actual URL
+languageCode: "fr-fr"
+title: "Blog de géomatique"
+theme: "xmin"
+googleAnalytics: ""
+disqusShortname: ""
+ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+footnotereturnlinkcontents: "↩"
+
+permalinks:
+  note: "/note/:year/:month/:day/:slug/"
+  post: "/post/:year/:month/:day/:slug/"
+
+menu:
+  main:
+    - name: Accueil
+      url: ""
+      weight: 1
+    - name: A propos
+      url: "about/"
+      weight: 2
+    - name: Catégories
+      url: "categories/"
+      weight: 3
+    - name: Tags
+      url: "tags/"
+      weight: 4
+    - name: RSS
+      url: "index.xml"
+
+params:
+  description: "Un blog de géomatique léger construit avec Hugo and blogdown."
+  footer: "&copy; [ggeo](https://ggeo.fr) -- {Year} | [Github](https://github.com/ggeofr) | [Bluesky](https://bsky.app/profile/ggeo.fr)"
+
+markup:
+  highlight:
+    codeFences: false
+  goldmark:
+    renderer:
+      unsafe: true
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block:
+          - - \[
+            - \]
+          - - $$
+            - $$
+          inline:
+          - - \(
+            - \)

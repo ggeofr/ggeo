@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Général on Blog de géomatique</title>
+    <link>https://ggeo.fr/categories/g%C3%A9n%C3%A9ral/</link>
+    <description>Recent content in Général on Blog de géomatique</description>
+    <generator>Hugo</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Tue, 06 May 2025 09:32:41 +0200</lastBuildDate>
+    <atom:link href="https://ggeo.fr/categories/g%C3%A9n%C3%A9ral/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A quick note</title>
+      <link>https://ggeo.fr/note/2025/05/06/a-quick-note/</link>
+      <pubDate>Tue, 06 May 2025 09:32:41 +0200</pubDate>
+      <guid>https://ggeo.fr/note/2025/05/06/a-quick-note/</guid>
+      <description>&lt;p&gt;Voici une note rapide.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hello world</title>
+      <link>https://ggeo.fr/posts/my-first-post/</link>
+      <pubDate>Sun, 04 May 2025 18:47:41 +0200</pubDate>
+      <guid>https://ggeo.fr/posts/my-first-post/</guid>
+      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello world!&lt;/h2&gt;&#xA;&lt;p&gt;C&amp;rsquo;est le premier post du blog géomatique &lt;img src=&#34;https://ggeo.fr/img/2024/logo_ggeo.png&#34; alt=&#34;logo ggeo&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Visitez le site internet &lt;a href=&#34;https://ggeo.fr&#34;&gt;ggeo&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
