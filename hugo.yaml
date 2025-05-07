@@ -13,13 +13,13 @@ permalinks:
 
 menu:
   main:
-    - name: Accueil
+    - name: Home
       url: ""
       weight: 1
-    - name: A propos
+    - name: About
       url: "about/"
       weight: 2
-    - name: Catégories
+    - name: Categories
       url: "categories/"
       weight: 3
     - name: Tags
