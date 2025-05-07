@@ -2,7 +2,7 @@ baseurl: "https://ggeo.netlify.app/"  # please update this to your actual URL
 languageCode: "fr-fr"
 title: "Blog de géomatique"
 theme: "xmin"
-googleAnalytics: ""
+googleAnalytics: "G-3RSQQV0PRJ"
 disqusShortname: ""
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 footnotereturnlinkcontents: "↩"
