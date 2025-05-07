@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Blog de géomatique</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>https://ggeo.netlify.app/categories/</link>
     <description>Recent content in Categories on Blog de géomatique</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Tue, 06 May 2025 09:32:41 +0200</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ggeo.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Général</title>
-      <link>http://localhost:1313/categories/g%C3%A9n%C3%A9ral/</link>
+      <link>https://ggeo.netlify.app/categories/g%C3%A9n%C3%A9ral/</link>
       <pubDate>Tue, 06 May 2025 09:32:41 +0200</pubDate>
-      <guid>http://localhost:1313/categories/g%C3%A9n%C3%A9ral/</guid>
+      <guid>https://ggeo.netlify.app/categories/g%C3%A9n%C3%A9ral/</guid>
       <description></description>
     </item>
     <item>
       <title>Outils</title>
-      <link>http://localhost:1313/categories/outils/</link>
+      <link>https://ggeo.netlify.app/categories/outils/</link>
       <pubDate>Sun, 04 May 2025 18:48:06 +0200</pubDate>
-      <guid>http://localhost:1313/categories/outils/</guid>
+      <guid>https://ggeo.netlify.app/categories/outils/</guid>
       <description></description>
     </item>
   </channel>
