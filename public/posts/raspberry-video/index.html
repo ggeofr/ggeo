@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr-fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Vidéo au démarrage avec un Raspberry Pi | Blog de géomatique</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/fonts.css" />
+    
+  </head>
+
+  <body>
+    <nav>
+    <ul class="menu">
+      
+      <li><a href="/">Accueil</a></li>
+      
+      <li><a href="/about/">A propos</a></li>
+      
+      <li><a href="/categories/">Catégories</a></li>
+      
+      <li><a href="/tags/">Tags</a></li>
+      
+      <li><a href="/index.xml">RSS</a></li>
+      
+    </ul>
+    <hr/>
+    </nav>
+
+<div class="article-meta">
+<h1><span class="title">Vidéo au démarrage avec un Raspberry Pi</span></h1>
+
+<h2 class="date">2025/05/07</h2>
+</div>
+
+<main>
+<h1 id="comment-lancer-un-script-ou-une-vidéo-au-démarrage-dun-ordinateur-raspberry">Comment lancer un script ou une vidéo au démarrage d&rsquo;un ordinateur Raspberry?</h1>
+<h2 id="installer-le-raspberry">Installer le raspberry</h2>
+<p>Télécharger Raspberry Pi Imager pour télécharger et flasher la carte SD du raspberry
+<a href="https://www.raspberrypi.org/downloads/">https://www.raspberrypi.org/downloads/</a></p>
+<p>Avec ce logiciel disponible sous Windows, Linux et Mac, choisir l&rsquo;image à télécharger: prendre Raspberry Pi OS Lite (sans GUI), et choisir la carte SD à flasher.</p>
+<h2 id="premier-démarrage-du-raspberry">Premier démarrage du raspberry</h2>
+<p>utilisateur: pi
+mot de passe: raspberry
+adresse IP à lire pendant le démarrage en ayant au préalable un écran HDMI branché.</p>
+<h2 id="activer-ssh">Activer SSH</h2>
+<p>Activer SSH depuis le Raspberry Pi avec raspi-config.
+Première solution pour activer SSH, votre Raspberry Pi possède un écran et un clavier. Dans ce cas, nous allons directement utiliser l’outil en ligne de commande raspi-config.</p>
+<p>Ouvrez un terminal, et tapez-y la commande suivante :</p>
+<p><code>sudo raspi-config</code></p>
+<p>Raspi-config est un outil permettant de gérer de nombreuses options sur Raspbian.
+Si vous ne l’avez pas fait, je vous conseille de commencer par changer le mot de passe par défaut (première ligne, « Change user password ») du Raspberry Pi puisqu’il sera désormais accessible en SSH.</p>
+<p>Puis, une fois le mot de passe changé, allez dans la partie « Interfacing Options » et choisissez la ligne SSH, puis « Yes ».</p>
+<p>Et voilà, votre serveur SSH est activé !</p>
+<h2 id="télécharger-la-vidéo">Télécharger la vidéo</h2>
+<p>Pour commencer, nous allons télécharger une vidéo à l’aide de youtube-dl que j’ai présenté ici si vous ne l’avez pas installé.
+Ouvrez un terminal et tapez ce qui suit :</p>
+<p><code>youtube-dl -f mp4 https://www.youtube.com/watch?v=XoDY9vFAaG8</code></p>
+<p>La vidéo choisie est top, vous verrez 😉
+Garder à l’esprit l’endroit ou la vidéo s’est enregistrée (normalement dans le répertoire pi).</p>
+<p>Nous renommons notre vidéo pour que ça soit plus simple :</p>
+<p><code>rm https://www.youtube.com/watch?v=XoDY9vFAaG8 martinpecheur.mp4</code></p>
+<h2 id="copier-la-vidéo-avec-ssh-et-scp">Copier la vidéo avec ssh et SCP</h2>
+<h2 id="installer-omxplayer">Installer omxplayer</h2>
+<p><code>sudo apt install omxplayer</code></p>
+<p>Ensuite nous allons créer un dossier pour placer notre vidéo et plus tard notre bout de code.</p>
+<pre><code class="language-bash">mkir video
+mv loop.mp4 video/
+cd video/
+</code></pre>
+<h2 id="créer-le-script">Créer le script:</h2>
+<p><code>sudo nano start.sh</code></p>
+<p>Et copiez ceci à l’intérieur du fichier qui s’ouvre :</p>
+<pre><code class="language-bash">#!/bin/sh
+omxplayer --loop -o hdmi -b /home/pi/video/martinpecheur.mp4
+</code></pre>
+<p>Quitter en appuyant sur ctrl+x et faite « o » ou « y » pour confirmer l’enregistrement.
+Le script indique que la vidéo située dans le répertoire loop/ s’ouvrira avec omxplayer en boucle avec le son sur l’hdmi.</p>
+<p>On met le script exécutable :</p>
+<p><code>sudo chmod +x start.sh</code></p>
+<p>On fait un test pour voir si ça se lance :</p>
+<p><code>./start.sh</code></p>
+<h2 id="pour-que-la-vidéo-se-lance-au-démarrage-du-pi-utiliser-crontab">Pour que la vidéo se lance au démarrage du pi utiliser crontab</h2>
+<p><code>sudo crontab -e</code></p>
+<p>Spécifier l&rsquo;éditeur de texte comme nano. Ecrire les lignes suivantes :</p>
+<p><code>@reboot sh /home/pi/video/start.sh</code></p>
+<p>Sauvegardez et quittez avec ctrl+x et « o » ou « y ».</p>
+<h2 id="lancer-le-raspberry">Lancer le raspberry</h2>
+<p>Pour redémarrer:</p>
+<p><code>sudo reboot</code></p>
+<p>ou pour éteindre proprement le raspberry pi:</p>
+<p><code>sudo shutdown -h now</code></p>
+<h2 id="arrêter-le-script-pendant-quil-tourne-avec-ssh">Arrêter le script pendant qu’il tourne avec ssh</h2>
+<p>Une fois connecté en ssh (depuis votre smartphone par ex), la commande « top » va nous indiquer quels sont les processus en cours :</p>
+<p><code>top</code></p>
+<p>Repérez le numéro ID d’omxplayer (par exemple 611) et nous y mettons fin avec la commande suivante :</p>
+<p><code>kill 611</code></p>
+
+</main>
+
+  <footer>
+  
+  
+  <hr/>
+  © <a href="https://ggeo.netlify.app/">ggeo</a> &ndash; 2025 | <a href="https://github.com/ggeofr">Github</a> | <a href="https://bsky.app/profile/ggeo.fr">Bluesky</a>
+  
+  </footer>
+  </body>
+</html>
+

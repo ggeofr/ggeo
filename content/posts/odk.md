@@ -2,8 +2,8 @@
 date = '2025-05-04T18:48:06+02:00'
 draft = false
 title = 'ODK'
-categories = [ 'outils' ]
-tags = [ 'odk' ]
+categories = [ 'SIG' ]
+tags = [ 'odk', 'linux' ]
 +++
 ## Introduction à ODK
 
