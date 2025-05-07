@@ -9,5 +9,5 @@ tags = [ 'markdown', 'hugo' ]
 
 C'est le premier post du blog géomatique ![logo ggeo](/img/2024/logo_ggeo.png)    
 
-Visitez le site internet [ggeo](https://ggeo.fr)
+Visitez le site internet [ggeo](https://ggeo.netlify.app/)
 

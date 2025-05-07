@@ -1,4 +1,4 @@
-baseurl: "https://ggeo.fr/"  # please update this to your actual URL
+baseurl: "https://ggeo.netlify.app/"  # please update this to your actual URL
 languageCode: "fr-fr"
 title: "Blog de géomatique"
 theme: "xmin"
@@ -30,7 +30,7 @@ menu:
 
 params:
   description: "Un blog de géomatique léger construit avec Hugo and blogdown."
-  footer: "&copy; [ggeo](https://ggeo.fr) -- {Year} | [Github](https://github.com/ggeofr) | [Bluesky](https://bsky.app/profile/ggeo.fr)"
+  footer: "&copy; [ggeo](https://ggeo.netlify.app/) -- {Year} | [Github](https://github.com/ggeofr) | [Bluesky](https://bsky.app/profile/ggeo.fr)"
 
 markup:
   highlight:
