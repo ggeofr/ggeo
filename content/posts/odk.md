@@ -3,7 +3,7 @@ date = '2025-05-04T18:48:06+02:00'
 draft = false
 title = 'ODK'
 categories = [ 'SIG' ]
-tags = [ 'odk', 'linux' ]
+tags = [ 'odk', 'linux', 'qgis' ]
 +++
 ## Introduction à ODK
 
