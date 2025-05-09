@@ -5,7 +5,6 @@ theme: "xmin"
 services:
   googleAnalytics:
     id: G-3RSQQV0PRJ
-disqusShortname: ""
 ignoreFiles: ["\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
 footnotereturnlinkcontents: "↩"
 
