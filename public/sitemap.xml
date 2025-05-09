@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ggeo.netlify.app/categories/</loc>
+    <loc>https://blog.ggeo.fr/categories/</loc>
     <lastmod>2025-05-07T11:22:47+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/</loc>
+    <loc>https://blog.ggeo.fr/</loc>
     <lastmod>2025-05-07T11:22:47+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/categories/informatique/</loc>
+    <loc>https://blog.ggeo.fr/categories/informatique/</loc>
     <lastmod>2025-05-07T11:22:47+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/tags/linux/</loc>
+    <loc>https://blog.ggeo.fr/tags/linux/</loc>
     <lastmod>2025-05-07T11:22:47+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/posts/</loc>
+    <loc>https://blog.ggeo.fr/posts/</loc>
     <lastmod>2025-05-07T11:22:47+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/tags/raspberry/</loc>
+    <loc>https://blog.ggeo.fr/tags/raspberry/</loc>
     <lastmod>2025-05-07T11:22:47+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/tags/</loc>
+    <loc>https://blog.ggeo.fr/tags/</loc>
     <lastmod>2025-05-07T11:22:47+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/posts/raspberry-video/</loc>
+    <loc>https://blog.ggeo.fr/posts/raspberry-video/</loc>
     <lastmod>2025-05-07T11:22:47+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/note/2025/05/06/a-quick-note/</loc>
+    <loc>https://blog.ggeo.fr/note/2025/05/06/a-quick-note/</loc>
     <lastmod>2025-05-06T09:32:41+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/categories/g%C3%A9n%C3%A9ral/</loc>
+    <loc>https://blog.ggeo.fr/categories/g%C3%A9n%C3%A9ral/</loc>
     <lastmod>2025-05-06T09:32:41+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/tags/markdown/</loc>
+    <loc>https://blog.ggeo.fr/tags/markdown/</loc>
     <lastmod>2025-05-06T09:32:41+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/note/</loc>
+    <loc>https://blog.ggeo.fr/note/</loc>
     <lastmod>2025-05-06T09:32:41+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/about/</loc>
+    <loc>https://blog.ggeo.fr/about/</loc>
     <lastmod>2025-05-05T16:40:40+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/tags/odk/</loc>
+    <loc>https://blog.ggeo.fr/tags/odk/</loc>
     <lastmod>2025-05-04T18:48:06+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/posts/odk/</loc>
+    <loc>https://blog.ggeo.fr/posts/odk/</loc>
     <lastmod>2025-05-04T18:48:06+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/categories/sig/</loc>
+    <loc>https://blog.ggeo.fr/categories/sig/</loc>
     <lastmod>2025-05-04T18:48:06+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/posts/my-first-post/</loc>
+    <loc>https://blog.ggeo.fr/posts/my-first-post/</loc>
     <lastmod>2025-05-04T18:47:41+02:00</lastmod>
   </url><url>
-    <loc>https://ggeo.netlify.app/tags/hugo/</loc>
+    <loc>https://blog.ggeo.fr/tags/hugo/</loc>
     <lastmod>2025-05-04T18:47:41+02:00</lastmod>
   </url>
 </urlset>

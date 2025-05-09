@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Blog de géomatique</title>
-    <link>https://ggeo.netlify.app/categories/</link>
+    <link>https://blog.ggeo.fr/categories/</link>
     <description>Recent content in Categories on Blog de géomatique</description>
     <generator>Hugo</generator>
     <language>fr-fr</language>
     <lastBuildDate>Wed, 07 May 2025 11:22:47 +0200</lastBuildDate>
-    <atom:link href="https://ggeo.netlify.app/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://blog.ggeo.fr/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Informatique</title>
-      <link>https://ggeo.netlify.app/categories/informatique/</link>
+      <link>https://blog.ggeo.fr/categories/informatique/</link>
       <pubDate>Wed, 07 May 2025 11:22:47 +0200</pubDate>
-      <guid>https://ggeo.netlify.app/categories/informatique/</guid>
+      <guid>https://blog.ggeo.fr/categories/informatique/</guid>
       <description></description>
     </item>
     <item>
       <title>Général</title>
-      <link>https://ggeo.netlify.app/categories/g%C3%A9n%C3%A9ral/</link>
+      <link>https://blog.ggeo.fr/categories/g%C3%A9n%C3%A9ral/</link>
       <pubDate>Tue, 06 May 2025 09:32:41 +0200</pubDate>
-      <guid>https://ggeo.netlify.app/categories/g%C3%A9n%C3%A9ral/</guid>
+      <guid>https://blog.ggeo.fr/categories/g%C3%A9n%C3%A9ral/</guid>
       <description></description>
     </item>
     <item>
       <title>SIG</title>
-      <link>https://ggeo.netlify.app/categories/sig/</link>
+      <link>https://blog.ggeo.fr/categories/sig/</link>
       <pubDate>Sun, 04 May 2025 18:48:06 +0200</pubDate>
-      <guid>https://ggeo.netlify.app/categories/sig/</guid>
+      <guid>https://blog.ggeo.fr/categories/sig/</guid>
       <description></description>
     </item>
   </channel>
