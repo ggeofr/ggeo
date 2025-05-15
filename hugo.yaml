@@ -99,7 +99,7 @@ params:
 
   editPost:
     URL: "https://github.com/ggeofr/ggeo/tree/master/content"
-    Text: "Suggest Changes" # edit text
+    Text: "Modifier" # edit text
     appendFilePath: true # to append file path to Edit link
 
   # for search
