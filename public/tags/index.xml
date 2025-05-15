@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tags on Ggeo blog</title>
+    <link>https://blog.ggeo.fr/tags/</link>
+    <description>Recent content in Tags on Ggeo blog</description>
+    <image>
+      <title>Ggeo blog</title>
+      <url>https://blog.ggeo.fr/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://blog.ggeo.fr/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.147.3</generator>
+    <language>fr-fr</language>
+    <lastBuildDate>Wed, 14 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://blog.ggeo.fr/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Qgis</title>
+      <link>https://blog.ggeo.fr/tags/qgis/</link>
+      <pubDate>Wed, 14 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.ggeo.fr/tags/qgis/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>https://blog.ggeo.fr/tags/linux/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.ggeo.fr/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Raspberrypi</title>
+      <link>https://blog.ggeo.fr/tags/raspberrypi/</link>
+      <pubDate>Sun, 11 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.ggeo.fr/tags/raspberrypi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>https://blog.ggeo.fr/tags/hugo/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.ggeo.fr/tags/hugo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Markdown</title>
+      <link>https://blog.ggeo.fr/tags/markdown/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.ggeo.fr/tags/markdown/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Odk</title>
+      <link>https://blog.ggeo.fr/tags/odk/</link>
+      <pubDate>Sun, 04 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://blog.ggeo.fr/tags/odk/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

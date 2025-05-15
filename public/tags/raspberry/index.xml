@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Raspberry on Ggeo blog</title>
+    <link>http://localhost:1313/tags/raspberry/</link>
+    <description>Recent content in Raspberry on Ggeo blog</description>
+    <image>
+      <title>Ggeo blog</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.147.3</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 07 May 2025 11:22:47 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/raspberry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vidéo au démarrage avec un Raspberry Pi</title>
+      <link>http://localhost:1313/posts/raspberry-video/</link>
+      <pubDate>Wed, 07 May 2025 11:22:47 +0200</pubDate>
+      <guid>http://localhost:1313/posts/raspberry-video/</guid>
+      <description>&lt;h1 id=&#34;comment-lancer-un-script-ou-une-vidéo-au-démarrage-dun-ordinateur-raspberry&#34;&gt;Comment lancer un script ou une vidéo au démarrage d&amp;rsquo;un ordinateur Raspberry?&lt;/h1&gt;
+&lt;h2 id=&#34;installer-le-raspberry&#34;&gt;Installer le raspberry&lt;/h2&gt;
+&lt;p&gt;Télécharger Raspberry Pi Imager pour télécharger et flasher la carte SD du raspberry
+&lt;a href=&#34;https://www.raspberrypi.org/downloads/&#34;&gt;https://www.raspberrypi.org/downloads/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Avec ce logiciel disponible sous Windows, Linux et Mac, choisir l&amp;rsquo;image à télécharger: prendre Raspberry Pi OS Lite (sans GUI), et choisir la carte SD à flasher.&lt;/p&gt;
+&lt;h2 id=&#34;premier-démarrage-du-raspberry&#34;&gt;Premier démarrage du raspberry&lt;/h2&gt;
+&lt;p&gt;utilisateur: pi
+mot de passe: raspberry
+adresse IP à lire pendant le démarrage en ayant au préalable un écran HDMI branché.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
