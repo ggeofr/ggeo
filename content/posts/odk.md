@@ -21,7 +21,7 @@ Ce kit est composé:
 * de l'application mobile ODK Collect pour collecter les données sur le terrain à partir du formulaire créé,
 * et d'un serveur pour agréger les soumissions de formulaires comme ODK Central ou KoboToolBox. 
 
-Les avantages sont la facilité de mise en œuvre et d'adapatation à une problématique. Il n'y a pas de base de données à installer et tout le paramétrage du formulaire se fait à l'aide d'un tableur. Le serveur ne sert qu'à agréger et télécharger les données. Rien ne reste sur le serveur une fois l'enquête terminée. 
+Les avantages sont la facilité de mise en œuvre et d'adaptation à une problématique. Il n'y a pas de base de données à installer et tout le paramétrage du formulaire se fait à l'aide d'un tableur. Le serveur ne sert qu'à agréger et télécharger les données. Rien ne reste sur le serveur une fois l'enquête terminée. 
 
 Autre avantage: la saisie sur le terrain en mode déconnecté lorsque la couverture réseau est incertaine. De plus, comme il n'y a pas de grosse base de données, le serveur n'a pas besoin d'être un monstre. Les données collectées avec une composante spatiale (réponses à la question "où?") peuvent servir à alimenter un Système d'Information Géographique (SIG).
 
