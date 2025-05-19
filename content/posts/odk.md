@@ -16,6 +16,8 @@ social:
 
 Open Data Kit (ODK) permet de créer des formulaires pour collecter de la donnée depuis le terrain.
 
+![logo ODK](/img/2025/odk-logo.png)
+
 Ce kit est composé: 
 * d'un standard XLSForm pour réaliser des formulaires avec un tableur comme LibreOffice, Excel ou Google Spreadsheet,
 * de l'application mobile ODK Collect pour collecter les données sur le terrain à partir du formulaire créé,
