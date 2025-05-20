@@ -16,6 +16,4 @@ social:
 
 C'est le premier post du blog géomatique ![logo ggeo](/img/2024/logo_ggeo.png)    
 
-Salut DENIS
-
 Visitez le [blog Ggeo](https://blog.ggeo.fr/)
