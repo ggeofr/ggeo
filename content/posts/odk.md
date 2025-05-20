@@ -13,7 +13,6 @@ social:
   bluesky_creator: "@ggeo.fr"
 ---
 ## Introduction à ODK
-
 ![logo ODK](/img/2025/odk-logo.png)
 
 Open Data Kit (ODK) permet de créer des formulaires pour collecter de la donnée depuis le terrain.
