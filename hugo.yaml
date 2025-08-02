@@ -1,4 +1,4 @@
-baseURL: "https://blog.ggeo.fr/"
+baseURL: "https://ggeo.netlify.app/"
 title: "Ggeo blog"
 languageCode: "fr-fr"
 theme: "PaperMod"
@@ -124,8 +124,8 @@ menu:
       url: /tags/
       weight: 20
     - identifier: example
-      name: ggeo.fr
-      url: https://ggeo.fr/
+      name: ggeo
+      url: https://ggeo.netlify.app/
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true

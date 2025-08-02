@@ -1,3 +1,3 @@
 User-agent: *
 Disallow:
-Sitemap: https://blog.ggeo.fr/sitemap.xml
+Sitemap: https://ggeo.netlify.app/sitemap.xml

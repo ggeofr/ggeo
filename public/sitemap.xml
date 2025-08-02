@@ -2,58 +2,58 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.ggeo.fr/categories/</loc>
+    <loc>https://ggeo.netlify.app/</loc>
+    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ggeo.netlify.app/posts/</loc>
+    <lastmod>2025-05-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://ggeo.netlify.app/categories/</loc>
     <lastmod>2025-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/</loc>
+    <loc>https://ggeo.netlify.app/tags/qgis/</loc>
     <lastmod>2025-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/posts/</loc>
+    <loc>https://ggeo.netlify.app/posts/qgis-sources/</loc>
     <lastmod>2025-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/tags/qgis/</loc>
+    <loc>https://ggeo.netlify.app/categories/sig/</loc>
     <lastmod>2025-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/posts/qgis-sources/</loc>
+    <loc>https://ggeo.netlify.app/tags/</loc>
     <lastmod>2025-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/categories/sig/</loc>
-    <lastmod>2025-05-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.ggeo.fr/tags/</loc>
-    <lastmod>2025-05-14T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://blog.ggeo.fr/posts/qgis-atlas/</loc>
+    <loc>https://ggeo.netlify.app/posts/qgis-atlas/</loc>
     <lastmod>2025-05-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/categories/informatique/</loc>
+    <loc>https://ggeo.netlify.app/categories/informatique/</loc>
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/tags/linux/</loc>
+    <loc>https://ggeo.netlify.app/tags/linux/</loc>
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/tags/raspberrypi/</loc>
+    <loc>https://ggeo.netlify.app/tags/raspberrypi/</loc>
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/posts/raspberry-video/</loc>
+    <loc>https://ggeo.netlify.app/posts/raspberry-video/</loc>
     <lastmod>2025-05-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/categories/general/</loc>
+    <loc>https://ggeo.netlify.app/categories/general/</loc>
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/posts/my-first-post/</loc>
+    <loc>https://ggeo.netlify.app/posts/my-first-post/</loc>
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/tags/hugo/</loc>
+    <loc>https://ggeo.netlify.app/tags/hugo/</loc>
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/tags/markdown/</loc>
+    <loc>https://ggeo.netlify.app/tags/markdown/</loc>
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/tags/odk/</loc>
+    <loc>https://ggeo.netlify.app/tags/odk/</loc>
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://blog.ggeo.fr/posts/odk/</loc>
+    <loc>https://ggeo.netlify.app/posts/odk/</loc>
     <lastmod>2025-05-04T00:00:00+00:00</lastmod>
   </url>
 </urlset>
