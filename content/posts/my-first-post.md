@@ -10,7 +10,7 @@ tags: [ "markdown", "hugo" ]
 ShowToc: true
 TocOpen: true
 social:
-  bluesky_creator: "@ggeo.fr"
+  bluesky_creator: "@guilgeo.bsky.social"
 ---
 ## Hello world!
 
