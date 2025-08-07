@@ -9,8 +9,6 @@ categories: ["informatique"]
 tags: [ "linux", "mail" ]
 ShowToc: true
 TocOpen: true
-social:
-  bluesky_creator: "@ggeo.fr"
 ---
 # La gestion des mails
 
@@ -26,15 +24,24 @@ Ce qui est pratique c'est d'avoir son propre domaine et de confier la gestion de
 
 ### Infomaniak mail
 
-Très bon retour sur leur offre que j'ai testée plusieurs années. Bonne gestion des domaines, de la sécurité. Serveur en Suisse. Techniciens très accessibles et disponibles. Coûts raisonnables. Très bonne offre Drive avec un volume conséquent. Peut très bien remplacer Google/Microsoft. Offre gratuite
+Très bon retour sur leur offre que j'ai testée plusieurs années. Bonne gestion des domaines, de la sécurité. Serveur en Suisse. Techniciens très accessibles et disponibles. Coûts raisonnables. Très bonne offre Drive et l'offre ksuite avec un volume conséquent. Peut très bien remplacer Google/Microsoft. Offre gratuite
 
 ### Fastmail
 
-Entreprise Australienne et serveurs aux États-Unis. 
+Entreprise Australienne et serveurs aux États-Unis. Très bonnes fonctionnalités et rapidité du webmail. Questions sur la confidentialité. Tarifs dans la tranche haute mais aucune panne.
 
 ### OVH
 
+Entreprise française.
 MX Plan, Zimbra mail
+
+### Posteo
+
+Entreprise allemande.
+
+### Tuta
+
+Entreprise suisse. Confidentialité au top. De gros efforts de faits sur le webmail et les appli mobile qui sont enfin devenues + rapides et + ergonomiques. Compte gratuit. Tarif raisonnable. Mail, calendrier, contacts, drive en préparation. 
 
 ### Zaclys
 

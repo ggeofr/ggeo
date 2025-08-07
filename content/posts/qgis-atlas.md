@@ -9,8 +9,6 @@ categories: ["sig"]
 tags: [ "qgis" ]
 ShowToc: true
 TocOpen: true
-social:
-  bluesky_creator: "@ggeo.fr"
 ---
 Utilisation des fonctions de base pour la réalisation de cartes en séries, pour l'export ou l'impression. Exemple d'un atlas communal des observations faunistiques. 
 

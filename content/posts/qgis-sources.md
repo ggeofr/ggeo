@@ -9,8 +9,6 @@ categories: ["sig"]
 tags: [ "qgis" ]
 ShowToc: true
 TocOpen: true
-social:
-  bluesky_creator: "@ggeo.fr"
 ---
 ## QGis Windows -> QGis Linux
 

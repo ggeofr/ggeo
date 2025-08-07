@@ -9,8 +9,6 @@ categories: ["sig"]
 tags: [ "odk", "linux", "qgis" ]
 ShowToc: true
 TocOpen: true
-social:
-  bluesky_creator: "@ggeo.fr"
 ---
 ## Introduction à ODK
 ![logo ODK](/img/2025/odk-logo.png)

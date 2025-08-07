@@ -9,8 +9,6 @@ categories: ["informatique"]
 tags: [ "linux", "raspberrypi" ]
 ShowToc: true
 TocOpen: true
-social:
-  bluesky_creator: "@ggeo.fr"
 ---
 # Comment lancer un script ou une vidéo au démarrage d'un ordinateur Raspberry?
 
